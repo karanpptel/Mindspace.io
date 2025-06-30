@@ -4,13 +4,20 @@ const JournalHistory = () => {
   const [entries, setEntries] = useState([])
   const [editingIndex, setEditingIndex] = useState(null)
   const [editText, setEditText] = useState('')
-  const [editTag, setEditTag] = useState('grateful')
+  const [editTag, setEditTag] = useState('Grateful') // Standardized to TitleCase
 
   //Load from localStorage on component mount
   useEffect(() => {
     const storedEntries = localStorage.getItem('journalEntries')
     if (storedEntries) {
-      setEntries(JSON.parse(storedEntries))
+      try {
+        setEntries(JSON.parse(storedEntries))
+      } catch (error) {
+        console.error("Failed to parse journal entries from localStorage:", error);
+        // Optionally, clear the corrupted storage or set entries to a default state
+        // localStorage.removeItem('journalEntries');
+        // setEntries([]);
+      }
     }
   }, [])
 
@@ -43,7 +50,7 @@ const JournalHistory = () => {
     localStorage.setItem('journalEntries', JSON.stringify(updated));
     setEditingIndex(null);
     setEditText('');
-    setEditTag('grateful'); 
+    setEditTag('Grateful'); // Standardized to TitleCase
     alert('Entry updated successfully!');
 
   }
@@ -70,19 +77,21 @@ const JournalHistory = () => {
                   <textarea
                     value={editText}
                     onChange={e => setEditText(e.target.value)}
+                    aria-label="Edit journal entry text"
                     className='w-full h-24 p-2 mt-2 border border-gray-300 dark:border-gray-600 resize-none dark:bg-gray-700 text-black rounded'
                   />
 
                   <select
                     value={editTag}
                     onChange={e => setEditTag(e.target.value)}
+                    aria-label="Edit mood tag"
                     className='p-2 mt-2 border rounded bg-cyan-700'
                   >
-                    <option value='grateful'>Grateful</option>
-                    <option value='stressed'>Stressed</option>
-                    <option value='happy'>Happy</option>
-                    <option value='sad'>Sad</option>
-                    <option value='excited'>Excited</option>
+                    <option value='Grateful'>Grateful</option>
+                    <option value='Stressed'>Stressed</option>
+                    <option value='Happy'>Happy</option>
+                    <option value='Sad'>Sad</option>
+                    <option value='Excited'>Excited</option>
                   </select>
 
                   <div className='mt-3 flex gap-3'>
@@ -105,7 +114,7 @@ const JournalHistory = () => {
                   <p className='text-white whitespace-pre-wrap mt-2'> {entry.text}</p>
                   <span className='text-sm text-blue-300 font-medium'>#{entry.tag}</span>
 
-                  <div className='mt-3 flex gap-2 justify-between mb-0 position-fixed'>
+                  <div className='mt-3 flex gap-2 justify-between mb-0'>
                        <button onClick={() => handleEdit(index)} className='bg-yellow-500 px-4 py-1 rounded text-white'>Edit</button>
                        <button onClick={() => handleDelete(index)} className='bg-red-600 px-4 py-1 rounded text-white'>Delete</button>
                   </div>

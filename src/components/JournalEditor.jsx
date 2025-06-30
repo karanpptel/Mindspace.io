@@ -9,7 +9,14 @@ const JournalEditor = () => {
     useEffect(() => {
         const stored = localStorage.getItem('journalEntries');
         if (stored) {
-            setEntries(JSON.parse(stored));
+            try {
+                setEntries(JSON.parse(stored));
+            } catch (error) {
+                console.error("Failed to parse journal entries from localStorage:", error);
+                // Optionally, clear the corrupted storage or set entries to a default state
+                // localStorage.removeItem('journalEntries');
+                // setEntries([]);
+            }
         }
     }, []);
 
@@ -38,6 +45,7 @@ const JournalEditor = () => {
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Write your journal entry..."
+                aria-label="Journal entry text"
                 className="w-full h-64 p-4  mt-4 border border-gray-300 dark:border-gray-600 resize-none dark:bg-gray-700 text-black  rounded"
             />
 
@@ -45,6 +53,7 @@ const JournalEditor = () => {
                 <select
                     value={tag}
                     onChange={(e) => setTag(e.target.value)}
+                    aria-label="Mood tag"
                     className="p-2 border rounded bg-cyan-700 text-white"
                 >
                     <option value="Grateful">Grateful</option>

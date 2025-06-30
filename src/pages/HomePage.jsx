@@ -65,9 +65,7 @@ const HomePage = () => {
       </section>
 
       {/* FAQ Section */}
-      
-        <FAQSection />
-      
+      <FAQSection />
 
       {/* Footer */}
       <footer className='bg-blue-900 text-white py-6 text-center'>
