@@ -1,12 +1,58 @@
-# React + Vite
+# Node CLI Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A versatile command-line interface tool built with Node.js that provides file compression, string manipulation, and API data fetching capabilities.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **File Compression**: Compress and decompress files using Gzip
+- **String Operations**: Perform various string manipulations (uppercase, lowercase, word count, palindrome check)
+- **API Data Fetching**: Fetch weather information and random jokes
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+## Usage
+
+### File Compression
+- Select 'Compress file' or 'Decompress file'
+- Enter source and destination file paths
+- Files will be compressed using Gzip compression
+
+### String Operations
+- Choose from: Uppercase, Lowercase, Word count, or Palindrome check
+- Enter your text
+- Get instant results
+
+### API Data Fetching
+- Access weather information and random jokes
+- Follow the interactive prompts
+
+## Project Structure
+```
+my-cli-tool/
+├── src/
+│   ├── commands/
+│   │   ├── compress.js
+│   │   ├── string.js
+│   │   └── fetch.js
+│   ├── menus/
+│   │   ├── compressionMenu.js
+│   │   ├── stringMenu.js
+│   │   └── fetchMenu.js
+│   └── index.js
+├── .env
+├── package.json
+└── README.md
+```
+
+## Dependencies
+
+- `inquirer`: Interactive command line interface
+- `axios`: API data fetching
+- `chalk`: Terminal styling
+- `dotenv`: Environment configuration
