@@ -70,7 +70,7 @@ const HomePage = () => {
       
 
       {/* Footer */}
-      <footer className='bg-blue-900 text-white py-6 text-center'>
+      <footer className='bg-blue-900 dark:bg-gray-700 text-white py-6 text-center'>
         <p className='text-sm'>
           © {new Date().getFullYear()} Mindspace. All rights reserved.
         </p>
