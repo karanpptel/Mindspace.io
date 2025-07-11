@@ -33,7 +33,7 @@ const HomePage = () => {
             <h3 className='text-xl font-semibold mb-2'>📊 Mood Analytics</h3>
             <p>
               Visualize your mental wellness with professional mood statistics
-              and chart analysis.
+              and chart analysis 
             </p>
           </div>
           <div>
@@ -54,15 +54,26 @@ const HomePage = () => {
         <h2 className='text-3xl font-bold mb-6 text-center'>
           How to Use Mindspace
         </h2>
-        <ol className='list-decimal list-inside space-y-4 text-lg'>
-          <li>Create your account or continue journaling anonymously.</li>
-          <li>
-            Head to the Journal tab and write your thoughts with a mood tag.
-          </li>
-          <li>Visit Calendar or Mood to explore your tracked progress.</li>
-          <li>Get inspired with our daily motivational quotes.</li>
-        </ol>
+        <div className='grid md:grid-cols-2 gap-8 text-lg'>
+          <div className='flex items-center space-x-3 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow'>
+            <span className='text-2xl'>🔑</span>
+            <p>Create your account or continue journaling anonymously.</p>
+          </div>
+          <div className='flex items-center space-x-3 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow'>
+            <span className='text-2xl'>📝</span>
+            <p>Head to the Journal tab and write your thoughts with a mood tag.</p>
+          </div>
+          <div className='flex items-center space-x-3 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow'>
+            <span className='text-2xl'>📅</span>
+            <p>Visit Calendar or Mood to explore your tracked progress.</p>
+          </div>
+          <div className='flex items-center space-x-3 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow'>
+            <span className='text-2xl'>✨</span>
+            <p>Get inspired with our daily motivational quotes.</p>
+          </div>
+        </div>
       </section>
+      
 
       {/* FAQ Section */}
       

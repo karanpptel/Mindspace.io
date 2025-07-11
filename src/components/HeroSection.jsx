@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import logo from '../assets/logo-ms.png'; // Ensure you have a logo image in the assets folder
+import logo from '../assets/logo-ms1.png'; // Ensure you have a logo image in the assets folder
 
 const bgImages = [
     '/src/assets/bgr1.jpg',
@@ -22,7 +22,7 @@ const HeroSection = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImage((prevIndex) => (prevIndex + 1) % bgImages.length);
-        }, 4000) // Change image every 4 seconds
+        }, 5000) // Change image every 4 seconds
 
     }, []);
 

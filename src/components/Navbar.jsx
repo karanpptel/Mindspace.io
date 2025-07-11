@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo-ms.png';
+import logo from '../assets/logo-ms1.png';
 import ThemeToggle from './ThemeToggle'; // Your Shadcn toggle
 
 const Navbar = () => {

@@ -1,5 +1,7 @@
 import { Switch } from "@/components/ui/switch";
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(
@@ -18,9 +20,9 @@ const ThemeToggle = () => {
 
   return (
     <div className="flex items-center gap-2">
-      <span>☀️</span>
+      <FontAwesomeIcon icon={faSun} />
       <Switch checked={darkMode} onChange={setDarkMode} />
-      <span>🌙</span>
+      <FontAwesomeIcon icon={faMoon} />
     </div>
   );
 };
