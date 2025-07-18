@@ -3,7 +3,7 @@ import * as React from "react";
 export const Switch = ({ checked = false, onChange = () => {} }) => {
   return (
     <button
-      onClick={() => onChange(!checked)} // 🔁 Toggle logic
+      onClick={() => onChange(!checked)} //  Toggle logic
       className={`w-14 h-7 flex items-center rounded-full p-1 duration-300 ease-in-out ${
         checked ? "bg-green-500" : "bg-gray-400"
       }`}

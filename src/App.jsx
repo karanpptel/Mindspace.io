@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import Navbar from './components/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import DashboardPage from './pages/DashboardPage'
@@ -10,7 +8,7 @@ import ChartTrackerPage from './pages/ChartTrackerPage'
 import HomePage from './pages/HomePage'
 
 function App () {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>

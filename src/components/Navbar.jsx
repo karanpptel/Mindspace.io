@@ -21,7 +21,7 @@ const Navbar = () => {
           <li><Link to="/dashboard" className="hover:text-red-400 transition-colors">Dashboard</Link></li>
           <li><Link to="/journal" className="hover:text-red-400 transition-colors">Journal</Link></li>
           <li><Link to="/chart-tracker" className="hover:text-red-400 transition-colors">Visualize</Link></li>
-          <li><Link to="/calendar" className="hover:text-red-400 transition-colors">Calendar</Link></li>
+        
         </ul>
 
         {/* Theme toggle + hamburger */}
